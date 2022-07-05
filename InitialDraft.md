@@ -1,4 +1,4 @@
-1. Introduction 
+1. Introduction
  
 As OGC standards have developed, the working groups have introduced various ways to indicate the spatial limits or extents of information of interest. These limits have various names such as 'bounding box', 'bounding volume', 'extent' or 'envelope' or even 'convex hull'. There appears to be no underlying conceptual model identified or defined in the OGC Abstract Topics, but in OGC standards there are a confusing variety of concrete encodings and interpretations.
 
