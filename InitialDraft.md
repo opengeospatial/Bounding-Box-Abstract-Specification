@@ -1,4 +1,4 @@
-1. Introduction
+## 1. Introduction
  
 As OGC standards have developed, the working groups have introduced various ways to indicate the spatial limits or extents of information of interest. These limits have various names such as 'bounding box', 'bounding volume', 'extent' or 'envelope' or even 'convex hull'. There appears to be no underlying conceptual model identified or defined in the OGC Abstract Topics, but in OGC standards there are a confusing variety of concrete encodings and interpretations.
 
@@ -6,7 +6,9 @@ The original 'bounding box' in 2D on a flat map may have been very self-explanat
 
 This lack of an agreed defined abstract concept was highlighted in the development of the OGC API Common standard.
 
-2. Overview. See Wikipedia https://en.wikipedia.org/wiki/Bounding_volume ,  https://en.wikipedia.org/wiki/Minimum_bounding_box  and https://en.wikipedia.org/wiki/Minimum_bounding_rectangle .
+## 2. Overview. 
+
+See Wikipedia https://en.wikipedia.org/wiki/Bounding_volume ,  https://en.wikipedia.org/wiki/Minimum_bounding_box  and https://en.wikipedia.org/wiki/Minimum_bounding_rectangle .
 
 The precise boundary of a set of geometric elements in a space is often expensive, difficult or impossible to calculate accurately enough, so various bounding concepts have been defined that are easier to calculate and use. The 'Bounding Box' is generally the simplest and easiest, and in many cases is good enough for many practical purposes.
 
@@ -31,7 +33,7 @@ An Object-Orientated Bounding Box, or even a Bounding Sphere, can be relatively 
 
 A possible advantage of a bounding box over a bounding sphere is that a box can be replicated in each dimension to give a tessellation of that dimension, without gaps or overlap.
 
-3. Proposed abstract definitions
+## 3. Proposed abstract definitions
 
 'The Bounding Box' in OGC standards shall be the minimum axis-aligned bounding box for the set of geometric elements being considered. The term 'A Bounding Box' shall  be an axis-aligned bounding box for the set of geometric elements being considered, but not necessarily the unique minimum.
 [Do we need stronger differentitation of the names – which will not translate well into some languages?]
@@ -40,7 +42,7 @@ If there is more than one Coordinate Reference System being considered, the term
 
 The Minimum Axis-Aligned Bounding Box is defined by one interval on each coordinate axis of the Coordinate Reference System, each of which is defined by the minimal and maximal value of the corresponding coordinates for all the points of the geometric elements under consideration.
 
-4. Encodings and Implementations.
+## 4. Encodings and Implementations.
 
 An interval on an axis of a dimension is well defined, even for 'periodic' axes, such a geographic longitude. However, on the latter, the interval and its complement have to be clearly distinguished, especially if the interval crosses the anti-meridian for example.
 
