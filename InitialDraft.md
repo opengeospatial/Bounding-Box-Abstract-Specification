@@ -1,0 +1,47 @@
+1. Introduction 
+ 
+As OGC standards have developed, the working groups have introduced various ways to indicate the spatial limits or extents of information of interest. These limits have various names such as 'bounding box', 'bounding volume', 'extent' or 'envelope' or even 'convex hull'. There appears to be no underlying conceptual model identified or defined in the OGC Abstract Topics, but in OGC standards there are a confusing variety of concrete encodings and interpretations.
+
+The original 'bounding box' in 2D on a flat map may have been very self-explanatory, but as standards now encompass 3D, 4D, or more, dimensions, and use cases extend beyond selecting a simple area of interest to moving objects, animations, collision detection, computationally expensive visualisations requiring object pruning, and simulated, virtual and augmented realities, this text is an attempt to ensure a sound conceptual basis and terminology are established.
+
+This lack of an agreed defined abstract concept was highlighted in the development of the OGC API Common standard.
+
+2. Overview. See Wikipedia https://en.wikipedia.org/wiki/Bounding_volume ,  https://en.wikipedia.org/wiki/Minimum_bounding_box  and https://en.wikipedia.org/wiki/Minimum_bounding_rectangle .
+
+The precise boundary of a set of geometric elements in a space is often expensive, difficult or impossible to calculate accurately enough, so various bounding concepts have been defined that are easier to calculate and use. The 'Bounding Box' is generally the simplest and easiest, and in many cases is good enough for many practical purposes.
+
+The phrase 'bounding box' usually means 'minimum bounding box'
+
+'Minimum' is important as it confers uniqueness - there are an infinity of non-minimal bounding boxes for a given set of geometric elements in a given space. The 'measure' which is minimal should be specified (e.g. area in 2D, volume in 3D, are often assumed), but other measures could be used, such as the minimum perimeter (a 1D measure on a 2D space) for example.
+
+It is assumed that the n-dimensional (nD) spaces under consideration are Euclidean, but the definitions can be  extended to non-Euclidean spaces. However, encodings and implementations need to carefully address 'periodic' dimensions such as geographic longitude.
+
+The Wikipedia article also defines these specialisations:
+    1 Axis-aligned minimum bounding box (AABB) - this is what is usually meant in geospatial and Simple Features and easy to calculate. Of course it is dependent on the coordinate reference system being used to locate the set of geometric elements.
+    2 Arbitrarily oriented minimum bounding box - this is the true minimum of the measure used. Usually it is difficult to calculate.
+    3 Object-oriented minimum bounding box (OOBB) - this is what is needed for dynamic systems, visualisation, or 3D simulation, such as GeoPose, CDB and Moving Features. It is aligned to the axes of the coordinate system used to define the object, and is unique to the object, but the object usually has been subjected to rotation, translation and scaling with respect to the coordinate reference system used to define the relative positions of all objects under consideration.
+
+For bounding shapes that are not rectangular boxes, in the various dimensions, the minimum bounding shape is usually called the convex hull, or convex envelope, or convex closure. It is precisely and uniquely defined for any given set of geometric elements. See https://en.wikipedia.org/wiki/Convex_hull .
+
+The simplest non-rectangular bounding shape is the sphere. The minimum bounding sphere for an object is often expensive to calculate, so a convenient sphere centre may be chosen and an approximate minimum bounding sphere calculated.  
+
+Both bounding boxes and bounding spheres enable easier calculations to deduce if the contained geometric elements potentially overlap or touch, or are completely separate. 
+
+An Object-Orientated Bounding Box, or even a Bounding Sphere, can be relatively easily converted to a larger, non-minimal, Axis-Aligned Bounding Box if this is considered more convenient.
+
+A possible advantage of a bounding box over a bounding sphere is that a box can be replicated in each dimension to give a tessellation of that dimension, without gaps or overlap.
+
+3. Proposed abstract definitions
+
+'The Bounding Box' in OGC standards shall be the minimum axis-aligned bounding box for the set of geometric elements being considered. The term 'A Bounding Box' shall  be an axis-aligned bounding box for the set of geometric elements being considered, but not necessarily the unique minimum.
+[Do we need stronger differentitation of the names – which will not translate well into some languages?]
+
+If there is more than one Coordinate Reference System being considered, the terms 'Axis-Aligned Bounding Box' or 'Object Oriented Bounding Box' should be used and the relevant axes or object with its Coordinate Reference System identified, possibly by scope or context. 
+
+The Minimum Axis-Aligned Bounding Box is defined by one interval on each coordinate axis of the Coordinate Reference System, each of which is defined by the minimal and maximal value of the corresponding coordinates for all the points of the geometric elements under consideration.
+
+4. Encodings and Implementations.
+
+An interval on an axis of a dimension is well defined, even for 'periodic' axes, such a geographic longitude. However, on the latter, the interval and its complement have to be clearly distinguished, especially if the interval crosses the anti-meridian for example.
+
+The traditional 2D cartographic definitions of a (2D) bounding  box often use the terms “lower left” and “upper right” or similar. These are problematic in nD space as well as the 2D domain. The terms ‘left/right’ make sense if the viewer is looking at a computer screen, but if the viewer is on the ‘other side’ of the screen, looking in the opposite direction, say through a  camera, the directions are reversed. Similarly, the terms “top/bottom” are not sensible if inspecting a horizontal table top display. For this reason, the abstract definition uses the minimum and maximum coordinate values along each coordinate axis. This is consistent with the definitions assumed by ISO19123 Coverage standards.
