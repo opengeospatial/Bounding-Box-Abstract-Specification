@@ -35,6 +35,13 @@ If there is more than one Coordinate Reference System being considered, the term
 
 The Minimum Axis-Aligned Bounding Box is defined by one interval on each coordinate axis of the Coordinate Reference System, each of which is defined by the minimal and maximal value of the corresponding coordinates for all the points of the geometric elements under consideration.
 
+== Encodings and Implementations.
+
+An interval on an axis of a dimension is well defined, even for 'periodic' axes, such a geographic longitude. However, on the latter, the interval and its complement have to be clearly distinguished, especially when the interval crosses the anti-meridian for example.
+
+The traditional 2D cartographic definitions of a (2D) bounding  box often use the terms “lower left” and “upper right” or similar. These are problematic in nD space as well as the 2D domain. The terms ‘left/right’ make sense if the viewer is looking at a computer screen, but if the viewer is on the ‘other side’ of the screen, looking in the opposite direction, say through a  camera, the directions are reversed. Similarly, the terms “top/bottom” are not sensible if inspecting a horizontal table top display. For this reason, the abstract definition uses the minimum and maximum coordinate values along each coordinate axis. This is consistent with the definitions assumed by ISO19123 Coverage standards.
+
+
 [NOTE]
 ====
 Add any other clauses as needed
