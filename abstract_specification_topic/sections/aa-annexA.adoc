@@ -25,7 +25,9 @@ Not every document in the Abstract Specification has been inspected.
 
 * Coverages: a bounding box, in a Coverage's Domain Set, defines an n-D rectangular region, defined through bounded intervals on each of its axes. A coverage is defined by one single CRS which lists all axes (in proper order) and defines the common CRS following the mechanisms of ISO 19111. A coverage may have horizontal x/y dimensions, a height/depth dimension, and one or more time axes, as well as non-spatio-temporal axes (called "abstract" in 19123-1 and "parametric" in 19111). Examples of such abstract axes include spectral bands, geostatistical measures, proxies like pressure altitude, etc. All axes are treated the same way, not withstanding that particular domain restrictions may apply (such as not having Latitude without Longitude, or having Latitude twice). Operations in WCS and WCPS, such as subsetting and scaling, allow deriving coverages from given ones, with possibly only some of the axes retained in the resulting Coverage's CRS; similarly, domain restrictions may apply when deriving coverages.
 
-* 2D Tile Matrix Sets & Tile Set Metadata standard specifies using `lowerLeft` and `upperRight`  and is alos how geospatial bounding boxes are defined in Ecere software implementation.
+* OWS Common Clause 10.2 (Bounding Box).  
+ 
+* 2D Tile Matrix Sets & Tile Set Metadata standard specifies using `lowerLeft` and `upperRight` and references OWS Common Clause Clause 10.2 as normative .
 
 == Non-OGC standards:
 * DCMI Box as an extension to the Dublin Core metadata scheme.
