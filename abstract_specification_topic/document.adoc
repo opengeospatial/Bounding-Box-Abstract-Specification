@@ -10,7 +10,7 @@
 :comment: ### Version number; optional. Dot-delimited, preferably with this structure <version number>.<minor version number>
 :edition: 1.0
 :comment: ### Internal reference number; mandatory
-:docnumber: 22-???
+:docnumber: 22-027
 :comment: ### Date on which the standard was updated; mandatory
 :received-date: 2022-07-07
 :comment: ### Date on which the standard was approved by the issuing authority; mandatory
@@ -20,7 +20,7 @@
 :comment: ### External link referencing the document; optional. If not provided, a default value is created following this structure: "http://www.opengis.net/doc/{abbrevation of doctype}/{abbrev}/{version}"
 :external-id: http://www.opengis.net/doc/AS/bbox/1.0
 :comment: ### Identifier embedded into a document type-specific external URL
-:referenceURLID: http://docs.opengeospatial.org/as/22-???/22-???.html
+:referenceURLID: http://docs.opengeospatial.org/as/22-027/22-027.html
 :comment: ### Author one
 :fullname: Chris Little
 :comment: ### Author two
@@ -28,7 +28,7 @@
 :comment: ### Role of the authors; mandatory
 :role: editor
 :comment: ### Comma delimited keywords; mandatory
-:keywords: ogcdoc, OGC document, Bounding Box, BBox, envelope, bounding volume, convex hull, standard, specification
+:keywords: ogcdoc, OGC document, Bounding Box, BBox, envelope, bounding volume, convex hull, standard, specification, abstract
 :comment: ### Semicolon-delimited list of the submitting organizations; mandatory
 :submitting-organizations: Met Office; Helyx
 :comment: ### Metanorma flavor; mandatory
