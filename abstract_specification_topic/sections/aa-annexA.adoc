@@ -32,7 +32,7 @@ Not every document in the Abstract Specification has been inspected.
 
 * "Geographic Bounding Box" in the (2003–current) ISO 19115 Metadata Standard for geographic information (ISO/TC 211). 
 
-* In the ISO 19107 Spatial Schema (ISO/TC 211), MBR appears as the datatype GM_Envelope that is returned by the envelope() operation on the root class GM_Object.
+* In the ISO 19107 Spatial Schema (ISO/TC 211), Minimum Bounding Rectangle appears as the datatype GM_Envelope that is returned by the envelope() operation on the root class GM_Object. 'Envelope' specified by the positions of the two corners - lower left, upper right. 
 
 
 [NOTE]
