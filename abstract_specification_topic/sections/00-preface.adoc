@@ -1,7 +1,11 @@
 
 .Preface
 
-<Insert Preface text here.>
+As OGC standards have developed, the Standards Working Groups have introduced various ways to indicate the spatial limits or extents of information of interest. These limits have various names such as 'bounding box', 'bounding volume', 'extent', 'envelope' or even 'convex hull'. There appears to be no underlying conceptual model identified or defined in the OGC Abstract Topics, but in OGC standards there are a confusing variety of concrete encodings and interpretations.
+
+The original 'bounding box' in 2D on a flat map may have been very self-explanatory, but as standards now encompass 3D, 4D, or more, dimensions, and use cases extend beyond selecting a simple area of interest to moving objects, animations, collision detection, computationally expensive visualisations requiring object pruning, and simulated, virtual and augmented realities, this specification is an attempt to ensure a sound conceptual basis and terminology are established to ensure consistency and interoperability of OGC Standards.
+
+The lack of an agreed defined abstract concept was highlighted in the development of the OGC API Common standard.
 
 [NOTE]
 ====
@@ -29,7 +33,8 @@ All questions regarding this submission should be directed to the editor or the 
 [%unnumbered]
 |===
 h| Name h| Affiliation
-| John Doe | Landcare Research New Zealand
+| Sam Meek | Helyx
+| Chris Little | Met Office
 ...
 |===
 
