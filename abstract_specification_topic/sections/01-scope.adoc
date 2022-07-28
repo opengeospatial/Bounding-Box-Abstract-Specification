@@ -1,7 +1,23 @@
 
 == Scope
 
-<Insert scope text here.>
+This document provides a conceptual model for the bounding box (BBOX). BBOXs are defined in different places with seperate, sometimes incompatible meanings. Stnadards that contain BBOX type definitions include, but are not limited to the following:
+
+* Web Map Service - BBOX is defined as the minimum and maximum coordinates in units of the coordinate reference system.
+* GML 3.2.1 - Uses the "boundingby" content model where an _Envelope_ can be defined as the Bounding Shape Type. Envelopes used in this way may not necessarily provide a _minimum_ rectangular bounding region if the CRS is a geodetic system (see 07-036_Geography_Markup_Language_GML_V3.2.1.pdf)
+* OGC Filter 1.1 - based on gml:Envelope, provides a compact way of defining a BBOX. It's a _intersect_ type query in that any geometry that intersects with a BBOX returns _true_ in the filter.
+GeoPackage - Bounding box with minimum and maximum x and y with the units based on coordinate system of enclosed data. The is no requirement for the BBOX to be a minimum BBOX as the BBOX can also define the extent of the default view of the GeoPackage.
+* Moving Features: mf:sTBoundedBy - This element regulates the spatio-temporal region where the trajectories described in the foliation exist. Times used in trajectories are described in offset time, that is, duration in seconds or minutes or hours from the time origin defined here is shown in the trajectory elements. The mf:STBoundedBy element inherits gml: BoundingShapeType, and include gml:EnvelopeWithTimePeriod [OGC 07‑036].
+* GeoRSS: A bounding box defines a rectangular region. This object is often used to define the extents of a map or define a rough area of interest. A GML box is called an Envelope. It consists of an <Envelope> element with a child <lowerCorner> element and a child <upperCorner> element.
+* GeoJSON: Bounding box (bbox) - A GeoJSON object MAY have a member named "bbox" to include information on the coordinate range for its Geometries, Features, or FeatureCollections.  The value of the bbox member MUST be an array of length 2*n where n is the number of dimensions represented in the contained geometries, with all axes of the most southwesterly point followed by all axes of the more northeasterly point.  The axes order of a bbox follows the axes order of geometries.
+* Coverages: a bounding box, in a Coverage's Domain Set, defines an n-D rectangular region, defined through bounded intervals on each of its axes. A coverage is defined by one single CRS which lists all axes (in proper order) and defines the common CRS following the mechanisms of ISO 19111. A coverage may have horizontal x/y dimensions, a height/depth dimension, and one or more time axes, as well as non-spatio-temporal axes (called "abstract" in 19123-1 and "parametric" in 19111). Examples of such abstract axes include spectral bands, geostatistical measures, proxies like pressure altitude, etc. All axes are treated the same way, not withstanding that particular domain restrictions may apply (such as not having Latitude without Longitude, or having Latitude twice). Operations in WCS and WCPS, such as subsetting and scaling, allow deriving coverages from given ones, with possibly only some of the axes retained in the resulting Coverage's CRS; similarly, domain restrictions may apply when deriving coverages.
+
+In addition to the OGC related standards, there are non-OGC standards that define a BBOX:
+
+* Dublin Core: DCMI box scheme including coordinates for extent with the inclusion of up and down faces as well as units and projection (https://www.dublincore.org/specifications/dublin-core/dcmi-box/)
+* FDGC: Contains _bounding coordinates_ which is a similar but slightly more complex model.
+
+ISO standards also define _bounding box_ and _envelope_, however, these are referenced as part of mentioned OGC Standards.
 
 [NOTE]
 ====
