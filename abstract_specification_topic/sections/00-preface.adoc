@@ -42,7 +42,14 @@ h| Name h| Affiliation
 [.preface]
 == Introduction
 
-<Insert introduction here.>
+The concept of a bounding box (BBOX) to identify the bounds of an area of interest is a well-known concept in geography and geospatial systems. There are several terms used across standards that refer to similar concepts that include; bounding box, envelope, minimum bounding box, bounding shape, plus others. One of the key features of the BBOX concept is that it refers to some geographic location that encompasses a resource. With the advent of multi-dimensional data where the geograhy is one element of the dataset _scope_, it is prudent to consider a definition of a BBOX that encompasses or at least supports n-dimensional datasets. One way of understanding a dataset's bounds is via its scope and associated metadata, the concept of a dataset is moveable and at its basic level is a group of features with shared attributes or a coverage. Dataset scoping is almost up to the the data manager to decide, there do not appear to be contraints beyond sharing attributes.
+
+This Topic presents a conceptual model for a BBOX that:
+
+* Encompasses the current BBOX definitions.
+* Extends to include n-dimensional data.
+* Allows scoping and attribute definition within the model such as time, CRS, or some other measure.
+* Harmonizes with concepts of geospatial metadata to make dataset FAIR (Findable, Accessible, Interoperable, Reusable).
 
 
 [.preface]

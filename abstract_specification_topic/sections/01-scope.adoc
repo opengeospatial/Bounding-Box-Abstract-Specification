@@ -19,6 +19,8 @@ In addition to the OGC related standards, there are non-OGC standards that defin
 
 ISO standards also define _bounding box_ and _envelope_, however, these are referenced as part of mentioned OGC Standards.
 
+The objective of this abstract topic is to harmonize these definitions to create an overall model that considers existing work and remains resiliant to change.
+
 [NOTE]
 ====
 Give the subject of the document and aspects of the scope covered by the document.
